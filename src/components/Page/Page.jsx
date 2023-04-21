@@ -6,7 +6,9 @@ export const Page = ({ children }) => {
   return (
     <main className={PREFIX + 'page'}>
       <Sidebar />
-      {children}
+      <section className='page-content'>
+        {children}
+      </section>
     </main>
   );
 };

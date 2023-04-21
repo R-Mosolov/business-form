@@ -1,18 +1,21 @@
 import { PREFIX } from "../../constants/servicePrefix";
+import { v4 as uuidv4 } from 'uuid';
 
 export const Input = ({ 
-  title,
+  label,
   type = 'text',
   placeholder = 'Поле для ввода', 
   required = true 
 }) => {
+  const id = uuidv4();
+
   return (
     <div className={PREFIX + 'input'}>
-      <p className="caption">
-        <span>{title}</span>
+      {label && <label for={id}>
+        <span>{label}</span>
         {required && <span>*</span>}
-      </p>
-      <input type={type} placeholder={placeholder} />
+      </label>}
+      <input id={id} type={type} placeholder={placeholder} />
     </div>
   );
 };
