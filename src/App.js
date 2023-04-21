@@ -1,7 +1,14 @@
+import './styles/App.styles.scss';
+import { Page } from "./components";
+import { PREFIX } from "./constants/servicePrefix";
+import { GeneralIGeneralQuestionsnfo } from './pages';
+
 function App() {
   return (
-    <div className="App">
-      <h1>Hello world!</h1>
+    <div className={PREFIX + 'app'}>
+      <Page>
+        <GeneralIGeneralQuestionsnfo />
+      </Page>
     </div>
   );
 }
