@@ -5,6 +5,8 @@ import { Select, Button } from "../../components";
 import { OwnershipFormIcon } from "../../assets";
 import { navigation } from '../../data';
 import { GENERAL_QUESTIONS, REGISTRATION_ADDRESS } from '../../constants/pages';
+import { IndividualEntrepreneur } from '.';
+import './OwnershipForm.scss';
 
 export const OwnershipForm = () => {
   const navigate = useNavigate();
@@ -31,6 +33,7 @@ export const OwnershipForm = () => {
         Выберите форму собственности и заполните данные
       </p>
       <Select 
+        className="activity-type"
         label="Вид деятельности"
         data={[
           { value: 'select', label: 'Выбрать' },
@@ -38,6 +41,7 @@ export const OwnershipForm = () => {
           { value: 'llc', label: 'Общество с ограниченной ответственностью (ООО)' },
         ]}
       />
+      <IndividualEntrepreneur />
       <div className="buttons-container">
         <Button secondary onClick={openPreviousPage}>
           Назад

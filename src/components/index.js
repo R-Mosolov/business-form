@@ -4,6 +4,7 @@ import Input from './Input';
 import Select from './Select';
 import Button from './Button';
 import Steps from './Steps';
+import File from './File';
 
 export {
   Page,
@@ -12,4 +13,5 @@ export {
   Select,
   Button,
   Steps,
+  File,
 };

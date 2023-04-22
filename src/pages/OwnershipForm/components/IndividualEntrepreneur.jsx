@@ -1,16 +1,18 @@
 import { PREFIX } from "../../../constants/servicePrefix";
-import { Input } from "../../../components";
+import { File, Input } from "../../../components";
 
 export const IndividualEntrepreneur = () => {
   return (
     <div className={PREFIX + 'individual-entrepreneur'}>
-      <Input label="ИНН" placeholder="хххххххххх" />
+      <Input className="mini-field" label="ИНН" placeholder="хххххххххх" />
+      <File />
       {/* TODO: добавить здесь Скан ИНН */}
       <Input
+        className="mini-field"
         type="date"
         label="Дата регистрации"
       />
-      <Input label="ОГРНИП" placeholder="ххххххххххххххх" />
+      <Input className="ogrnip" label="ОГРНИП" placeholder="ххххххххххххххх" />
       {/* TODO: добавить здесь Скан ОГРНИП */}
       {/* TODO: добавить здесь Скан договора аренды помещения (офиса) */}
       {/* TODO: добавить здесь Скан выписки из ЕГРИП (не старше 3 месяцев) */}
