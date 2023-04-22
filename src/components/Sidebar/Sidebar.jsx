@@ -1,4 +1,4 @@
-import './Sidebar.styles.scss';
+import './Sidebar.scss';
 import { PREFIX } from "../../constants/servicePrefix";
 import { Steps } from '../Steps/Steps';
 

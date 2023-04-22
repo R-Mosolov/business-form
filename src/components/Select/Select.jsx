@@ -1,8 +1,10 @@
 import { PREFIX } from "../../constants/servicePrefix";
 import { v4 as uuidv4 } from 'uuid';
-import './Select.styles.scss';
+import './Select.scss';
+import cn from 'classnames';
 
 export const Select = ({
+  className,
   label = 'Поле для выбора',
   data = [{ value: 'example', label: 'Выберите вариант' }],
   required = true,
@@ -10,7 +12,10 @@ export const Select = ({
   const id = uuidv4();
 
   return (
-    <div className={PREFIX + 'select'}>
+    <div className={cn(
+      PREFIX + 'select',
+      { [className]: className }
+    )}>
     {label && <label htmlFor={id}>
       <span>{label}</span>
       {required && <span>*</span>}

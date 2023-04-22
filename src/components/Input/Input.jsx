@@ -1,17 +1,22 @@
+import './Input.scss';
 import { PREFIX } from "../../constants/servicePrefix";
 import { v4 as uuidv4 } from 'uuid';
-import './Input.styles.scss';
+import cn from 'classnames';
 
 export const Input = ({ 
+  className,
   label,
   type = 'text',
   placeholder = 'Поле для ввода', 
-  required = true 
+  required = true
 }) => {
   const id = uuidv4();
 
   return (
-    <div className={PREFIX + 'input'}>
+    <div className={cn(
+      PREFIX + 'input',
+      { [className]: className }
+    )}>
       {label && <label htmlFor={id}>
         <span>{label}</span>
         {required && <span>*</span>}

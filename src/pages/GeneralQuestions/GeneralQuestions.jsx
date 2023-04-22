@@ -23,27 +23,33 @@ export const GeneralQuestions = () => {
       <p className="description">
         Введите свои персональные данные.
       </p>
-      <Input label="Фамилия" placeholder="Васильев" />
-      <Input label="Имя" placeholder="Иван" />
-      <Input label="Отчество" placeholder="Сергеевич" />
-      <Select 
-        label="Основной город"
-        data={[
-          { value: 'spb', label: 'Санкт-Петербург' },
-          { value: 'msc', label: 'Москва' },
-        ]}
-      />
-      <Select 
-        label="Гражданство"
-        data={[
-          { value: 'ru', label: 'Россия' },
-          { value: 'fr', label: 'Франция' },
-        ]}
-      />
-      <Input
-        type="date"
-        label="Дата рождения"
-      />
+      <div className='big-columns-container'>
+        <Input label="Фамилия" placeholder="Васильев" />
+        <Input label="Имя" placeholder="Иван" />
+      </div>
+      <div className='big-columns-container'>
+        <Input label="Отчество" placeholder="Сергеевич" />
+        <Select 
+          label="Основной город"
+          data={[
+            { value: 'spb', label: 'Санкт-Петербург' },
+            { value: 'msc', label: 'Москва' },
+          ]}
+        />
+      </div>
+      <div className='big-columns-container'>
+        <Select 
+          label="Гражданство"
+          data={[
+            { value: 'ru', label: 'Россия' },
+            { value: 'fr', label: 'Франция' },
+          ]}
+        />
+        <Input
+          type="date"
+          label="Дата рождения"
+        />
+      </div>
       <Input
         label="Место рождения (как указано в паспорте)" 
         placeholder="Введите наименование региона и населенного пункта" 

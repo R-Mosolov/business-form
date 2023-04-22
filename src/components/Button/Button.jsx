@@ -1,4 +1,4 @@
-import './Button.styles.scss';
+import './Button.scss';
 import { PREFIX } from '../../constants/servicePrefix';
 import cn from 'classnames';
 

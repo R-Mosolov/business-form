@@ -1,0 +1,15 @@
+.bf-address-form {
+  .small-columns {
+    display: flex;
+    column-gap: 16px;
+
+    & .bf-input {
+      width: 72px;
+    }
+  }
+
+  & .registration-date {
+    margin-right: 174px;
+    width: 160px;
+  }
+}

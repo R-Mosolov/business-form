@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo } from 'react';
-import './Steps.styles.scss';
+import './Steps.scss';
 import { PREFIX } from '../../constants/servicePrefix';
 import { navigation } from '../../data';
 import cn from 'classnames';

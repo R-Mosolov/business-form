@@ -5,6 +5,7 @@ import { PREFIX } from "../../constants/servicePrefix";
 import { Select, Button } from "../../components";
 import { navigation } from '../../data';
 import { RESIDENCE_ADDRESS } from '../../constants/pages';
+import './SocialNetworks.scss';
 
 export const SocialNetworks = () => {
   const navigate = useNavigate();
@@ -25,6 +26,7 @@ export const SocialNetworks = () => {
         и количество подписчиков.
       </p>
       <Select 
+        className="site-or-app"
         label="Сайт / Приложение"
         data={[
           { value: 'select', label: 'Выбрать' },
