@@ -9,15 +9,17 @@ export const RegistrationAddress = () => {
       <img alt="Иконка дома" src={AddressIcon} />
       <h1>Адрес регистрации</h1>
       <p className="description">
-        Введите свой действуйющий адрес прописки.
+        Введите свой действующий адрес прописки.
       </p>
       <AddressForm />
-      <Button>
-        Назад
-      </Button>
-      <Button>
-        Далее
-      </Button>
+      <div className="buttons-container">
+        <Button secondary>
+          Назад
+        </Button>
+        <Button>
+          Далее
+        </Button>
+      </div>
     </div>
   );
 };
