@@ -1,5 +1,5 @@
 import { PREFIX } from "../../../constants/servicePrefix";
-import { Input, Button } from "../../../components";
+import { Input, Button, File } from "../../../components";
 
 export const LimitedLiabilityCompany = () => {
   return (
@@ -17,9 +17,9 @@ export const LimitedLiabilityCompany = () => {
         label="Дата регистрации"
       />
       <Input label="ИНН" placeholder="хххххххххх" />
-      {/* TODO: добавить здесь Скан ИНН */}
+      <File label="Скан ИНН" />
       <Input label="ОГРН" placeholder="ххххххххххххх" />
-      {/* TODO: добавить здесь Скан ОГРН */}
+      <File label="Скан ОГРН" />
       <Button>
         Отмена
       </Button>
