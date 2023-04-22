@@ -3,6 +3,7 @@ import Sidebar from './Sidebar';
 import Input from './Input';
 import Select from './Select';
 import Button from './Button';
+import Steps from './Steps';
 
 export {
   Page,
@@ -10,4 +11,5 @@ export {
   Input,
   Select,
   Button,
+  Steps,
 };

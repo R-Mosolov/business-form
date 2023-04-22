@@ -1,8 +1,21 @@
+import { useCallback } from 'react';
+import { useNavigate } from "react-router-dom";
 import { Button, Input, Select } from "../../components";
 import { PREFIX } from "../../constants/servicePrefix";
 import { GeneralQuestionsIcon } from "../../assets";
+import { navigation } from '../../data';
+import { OWNERSHIP_FORM } from '../../constants/pages';
 
 export const GeneralQuestions = () => {
+  const navigate = useNavigate();
+
+  const openNextPage = useCallback(() => {
+    const nextPage = navigation.find(({ id }) => id === OWNERSHIP_FORM).path;
+
+    navigate(nextPage);
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className={PREFIX + 'general-questions'}>
       <img alt="Иконка профиля" src={GeneralQuestionsIcon} />
@@ -16,14 +29,14 @@ export const GeneralQuestions = () => {
       <Select 
         label="Основной город"
         data={[
+          { value: 'spb', label: 'Санкт-Петербург' },
           { value: 'msc', label: 'Москва' },
-          { value: 'spb', label: 'Санкт-Петербург', selected: true },
         ]}
       />
       <Select 
         label="Гражданство"
         data={[
-          { value: 'ru', label: 'Россия', selected: true },
+          { value: 'ru', label: 'Россия' },
           { value: 'fr', label: 'Франция' },
         ]}
       />
@@ -35,12 +48,14 @@ export const GeneralQuestions = () => {
         label="Место рождения (как указано в паспорте)" 
         placeholder="Введите наименование региона и населенного пункта" 
       />
-      <Button>
-        Отмена
-      </Button>
-      <Button>
-        Далее
-      </Button>
+      <div className="buttons-container">
+        <Button secondary>
+          Отмена
+        </Button>
+        <Button onClick={openNextPage}>
+          Далее
+        </Button>
+      </div>
     </div>
   );
 };

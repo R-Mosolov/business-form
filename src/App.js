@@ -1,14 +1,17 @@
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
 import './styles/App.styles.scss';
-import { Page } from "./components";
 import { PREFIX } from "./constants/servicePrefix";
-import { RegistrationAddress } from './pages';
+import { navigation } from "./data";
 
 function App() {
+  const router = createBrowserRouter(navigation);
+
   return (
     <div className={PREFIX + 'app'}>
-      <Page>
-        <RegistrationAddress />
-      </Page>
+      <RouterProvider router={router} />
     </div>
   );
 }

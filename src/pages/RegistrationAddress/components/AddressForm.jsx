@@ -6,14 +6,14 @@ export const AddressForm = () => {
       <Select 
         label="Страна"
         data={[
-          { value: 'ru', label: 'Россия', selected: true },
+          { value: 'ru', label: 'Россия' },
           { value: 'fr', label: 'Франция' },
         ]}
       />
       <Select 
         label="Регион"
         data={[
-          { value: 'select', label: 'Выберите регион', selected: true },
+          { value: 'select', label: 'Выберите регион' },
         ]}
       />
       <Input

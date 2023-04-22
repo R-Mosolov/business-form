@@ -1,5 +1,6 @@
 import './Sidebar.styles.scss';
 import { PREFIX } from "../../constants/servicePrefix";
+import { Steps } from '../Steps/Steps';
 
 export const Sidebar = () => {
   return (
@@ -8,15 +9,7 @@ export const Sidebar = () => {
       <p className='description description-sidebar'>
         Заполните все пункты данной формы и нажмите кнопку «Сохранить».
       </p>
-      <nav>
-        <ol>
-          <li>Общие</li>
-          <li>Форма собственности</li>
-          <li>Адрес регистрации</li>
-          <li>Адрес проживания</li>
-          <li>Социальные сети</li>
-        </ol>
-      </nav>
+      <Steps />
     </section>
   );
 };

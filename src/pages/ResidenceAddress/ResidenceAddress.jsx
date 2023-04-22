@@ -1,9 +1,29 @@
+import { useCallback } from 'react';
+import { useNavigate } from "react-router-dom";
 import { PREFIX } from "../../constants/servicePrefix";
 import { Button } from "../../components";
 import AddressForm from "../RegistrationAddress/components";
 import { AddressIcon } from "../../assets";
+import { navigation } from '../../data';
+import { REGISTRATION_ADDRESS, SOCIAL_NETWORKS } from '../../constants/pages';
 
 export const ResidenceAddress = () => {
+  const navigate = useNavigate();
+
+  const openNextPage = useCallback(() => {
+    const nextPage = navigation.find(({ id }) => id === SOCIAL_NETWORKS).path;
+
+    navigate(nextPage);
+    window.scrollTo(0, 0);
+  }, []);
+
+  const openPreviousPage = useCallback(() => {
+    const previousPage = navigation.find(({ id }) => id === REGISTRATION_ADDRESS).path;
+
+    navigate(previousPage);
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className={PREFIX + 'residence-address'}>
       <img alt="Иконка дома" src={AddressIcon} />
@@ -13,12 +33,14 @@ export const ResidenceAddress = () => {
       </p>
       {/* TODO: Адрес регистрации и фактического проживания совпадают */}
       <AddressForm />
-      <Button>
-        Назад
-      </Button>
-      <Button>
-        Далее
-      </Button>
+      <div className="buttons-container">
+        <Button secondary onClick={openPreviousPage}>
+          Назад
+        </Button>
+        <Button onClick={openNextPage}>
+          Далее
+        </Button>
+      </div>
     </div>
   );
 };

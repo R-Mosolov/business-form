@@ -1,0 +1,47 @@
+.bf-steps {
+  & ol {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+    &::before {
+      margin-top: 185px;
+      margin-left: -162px;
+      content: "";
+      position: absolute;
+      height: 0px;
+      width: 365px;
+      border: 1px solid #EEEDF2;
+      transform: rotate(90deg);
+      z-index: -1;
+    }
+  }
+
+  & li {
+    margin-bottom: 44px;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    line-height: 19px;
+    color: #383838;
+
+    & .number-container {
+      margin-right: 16px;
+      height: 42px;
+      width: 42px;
+      background: #0063FF;
+      border-radius: 35px;
+
+      & .number-item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        font-size: 17px;
+        line-height: 21px;
+        text-align: center;
+        color: #FFFFFF;
+      }
+    }
+  }
+}

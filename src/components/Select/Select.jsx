@@ -4,21 +4,21 @@ import './Select.styles.scss';
 
 export const Select = ({
   label = 'Поле для выбора',
-  data = [{ value: 'example', label: 'Выберите вариант', selected: true }],
+  data = [{ value: 'example', label: 'Выберите вариант' }],
   required = true,
 }) => {
   const id = uuidv4();
 
   return (
     <div className={PREFIX + 'select'}>
-    {label && <label for={id}>
+    {label && <label htmlFor={id}>
       <span>{label}</span>
       {required && <span>*</span>}
     </label>}
-      <select id={id}>
-        {data.map(({ label, value, selected }) => {
+      <select id={id} defaultValue={data[0]}>
+        {data.map(({ label, value }, index) => {
           return (
-            <option value={value} label={label} selected={selected}>
+            <option key={index} value={value} label={label}>
               {label}
             </option>
           );

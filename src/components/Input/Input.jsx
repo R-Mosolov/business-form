@@ -12,7 +12,7 @@ export const Input = ({
 
   return (
     <div className={PREFIX + 'input'}>
-      {label && <label for={id}>
+      {label && <label htmlFor={id}>
         <span>{label}</span>
         {required && <span>*</span>}
       </label>}
