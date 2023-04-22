@@ -1,5 +1,6 @@
 import { PREFIX } from "../../constants/servicePrefix";
 import { v4 as uuidv4 } from 'uuid';
+import './Select.styles.scss';
 
 export const Select = ({
   label = 'Поле для выбора',
@@ -9,7 +10,7 @@ export const Select = ({
   const id = uuidv4();
 
   return (
-    <div className={PREFIX + 'selector'}>
+    <div className={PREFIX + 'select'}>
     {label && <label for={id}>
       <span>{label}</span>
       {required && <span>*</span>}

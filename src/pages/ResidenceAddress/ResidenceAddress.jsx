@@ -8,7 +8,10 @@ export const ResidenceAddress = () => {
     <div className={PREFIX + 'residence-address'}>
       <img alt="Иконка дома" src={AddressIcon} />
       <h1>Адрес проживания</h1>
-      <p>Введите свой действуйющий адрес проживания.</p>
+      <p className="description">
+        Введите свой действуйющий адрес проживания.
+      </p>
+      {/* TODO: Адрес регистрации и фактического проживания совпадают */}
       <AddressForm />
       <Button>
         Назад

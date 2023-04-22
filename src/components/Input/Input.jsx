@@ -1,5 +1,6 @@
 import { PREFIX } from "../../constants/servicePrefix";
 import { v4 as uuidv4 } from 'uuid';
+import './Input.styles.scss';
 
 export const Input = ({ 
   label,

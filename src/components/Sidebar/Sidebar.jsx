@@ -5,7 +5,9 @@ export const Sidebar = () => {
   return (
     <section className={PREFIX + 'sidebar'}>
       <h2>Создание аккаунта</h2>
-      <p>Заполните все пункты данной формы и нажмите кнопку «Сохранить».</p>
+      <p className='description description-sidebar'>
+        Заполните все пункты данной формы и нажмите кнопку «Сохранить».
+      </p>
       <nav>
         <ol>
           <li>Общие</li>

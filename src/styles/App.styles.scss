@@ -1,4 +1,52 @@
+@font-face {
+  font-family: 'Inter-Light';
+  src: url('../assets/fonts/inter/static/Inter-Light.ttf');
+}
+
+@font-face {
+  font-family: 'Inter-Medium';
+  src: url('../assets/fonts/inter/static/Inter-Medium.ttf');
+}
+
 body {
   margin: 0;
   padding: 0;
+}
+
+.bf-app {
+  font-family: 'Inter-Light', Arial, sans-serif;
+
+  & h1,
+  & h2 {
+    font-family: 'Inter-Medium', Arial, sans-serif;
+    color: #1B1B1B;
+  }
+
+  & h1 {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-size: 18px;
+  }
+
+  & h2 {
+    font-size: 19px;
+  }
+
+  & .description {
+    margin-bottom: 64px;
+    font-size: 16px;
+    color: #000000;
+    opacity: 0.5;
+
+    &-sidebar {
+      font-size: 17px;
+    }
+  }
+
+  & label {
+    font-size: 14px;
+    line-height: 17px;
+    color: #222222;
+    opacity: 0.6;
+  }
 }

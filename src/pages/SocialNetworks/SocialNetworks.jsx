@@ -7,7 +7,7 @@ export const SocialNetworks = () => {
     <div className={PREFIX + 'social-networks'}>
     <img alt="Иконка дома" src={SocialNetworksIcon} />
     <h1>Социальные сети</h1>
-    <p>
+    <p className="description">
       Введите свои действуйющие ссылки на социальные сети 
       и количество подписчиков.
     </p>

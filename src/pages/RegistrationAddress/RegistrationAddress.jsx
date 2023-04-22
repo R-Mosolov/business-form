@@ -8,7 +8,9 @@ export const RegistrationAddress = () => {
     <div className={PREFIX + 'registration-address'}>
       <img alt="Иконка дома" src={AddressIcon} />
       <h1>Адрес регистрации</h1>
-      <p>Введите свой действуйющий адрес прописки.</p>
+      <p className="description">
+        Введите свой действуйющий адрес прописки.
+      </p>
       <AddressForm />
       <Button>
         Назад

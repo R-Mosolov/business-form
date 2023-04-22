@@ -7,7 +7,9 @@ export const GeneralQuestions = () => {
     <div className={PREFIX + 'general-questions'}>
       <img alt="Иконка профиля" src={GeneralQuestionsIcon} />
       <h1>Общие</h1>
-      <p>Введите свои персональные данные.</p>
+      <p className="description">
+        Введите свои персональные данные.
+      </p>
       <Input label="Фамилия" placeholder="Васильев" />
       <Input label="Имя" placeholder="Иван" />
       <Input label="Отчество" placeholder="Сергеевич" />

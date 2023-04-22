@@ -2,8 +2,10 @@
   display: flex;
 
   & .page-content {
-    margin-left: auto;
+    margin-top: 110px;
+    margin-bottom: 110px;
+    margin-left: 600px;
     margin-right: auto;
-    max-width: 710px;
+    width: 708px;
   }
 }
