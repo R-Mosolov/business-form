@@ -1,13 +1,13 @@
 import './styles/App.styles.scss';
 import { Page } from "./components";
 import { PREFIX } from "./constants/servicePrefix";
-import { GeneralIGeneralQuestionsnfo } from './pages';
+import { SocialNetworks } from './pages';
 
 function App() {
   return (
     <div className={PREFIX + 'app'}>
       <Page>
-        <GeneralIGeneralQuestionsnfo />
+        <SocialNetworks />
       </Page>
     </div>
   );

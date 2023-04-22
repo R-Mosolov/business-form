@@ -1,9 +1,11 @@
 import { Button, Input, Select } from "../../components";
+import { PREFIX } from "../../constants/servicePrefix";
+import { GeneralQuestionsIcon } from "../../assets";
 
 export const GeneralQuestions = () => {
   return (
-    <>
-      <img alt="Иконка профиля"></img>
+    <div className={PREFIX + 'general-questions'}>
+      <img alt="Иконка профиля" src={GeneralQuestionsIcon} />
       <h1>Общие</h1>
       <p>Введите свои персональные данные.</p>
       <Input label="Фамилия" placeholder="Васильев" />
@@ -15,7 +17,6 @@ export const GeneralQuestions = () => {
           { value: 'msc', label: 'Москва' },
           { value: 'spb', label: 'Санкт-Петербург', selected: true },
         ]}
-        required
       />
       <Select 
         label="Гражданство"
@@ -23,7 +24,6 @@ export const GeneralQuestions = () => {
           { value: 'ru', label: 'Россия', selected: true },
           { value: 'fr', label: 'Франция' },
         ]}
-        required
       />
       <Input
         type="date"
@@ -39,6 +39,6 @@ export const GeneralQuestions = () => {
       <Button>
         Далее
       </Button>
-    </>
+    </div>
   );
 };
