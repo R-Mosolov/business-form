@@ -3,6 +3,7 @@ import OwnershipFormIcon from './images/ownershipForm.svg';
 import OwnershipFormOnSelectIcon from './images/ownershipFormOnSelect.svg';
 import AddressIcon from './images/address.svg';
 import SocialNetworksIcon from './images/socialNetworks.svg';
+import CheckboxIcon from './images/checkbox.svg';
 
 export {
   GeneralQuestionsIcon,
@@ -10,4 +11,5 @@ export {
   OwnershipFormOnSelectIcon,
   AddressIcon,
   SocialNetworksIcon,
+  CheckboxIcon,
 };

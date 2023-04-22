@@ -42,6 +42,23 @@
         text-align: center;
         color: #FFFFFF;
       }
+
+      &.passed-page {
+        background: #7DAFFD;
+      }
+
+      &.feature-page {
+        background: #EEEDF2;
+
+        & .number-item {
+          color: #1B1B1B;
+          opacity: 0.6;
+        }
+      }
+    }
+
+    & .title {
+      margin-right: 16px;
     }
   }
 }

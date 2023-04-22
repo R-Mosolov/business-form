@@ -18,6 +18,7 @@ export const navigation = [
   {
     id: GENERAL_QUESTIONS,
     title: "Общие",
+    order: 1,
     path: "/",
     element: (
       <Page>
@@ -28,6 +29,7 @@ export const navigation = [
   {
     id: OWNERSHIP_FORM,
     title: "Форма собственности",
+    order: 2,
     path: "/" + OWNERSHIP_FORM,
     element: (
       <Page>
@@ -38,6 +40,7 @@ export const navigation = [
   {
     id: REGISTRATION_ADDRESS,
     title: "Адрес регистрации",
+    order: 3,
     path: "/" + REGISTRATION_ADDRESS,
     element: (
       <Page>
@@ -48,6 +51,7 @@ export const navigation = [
   {
     id: RESIDENCE_ADDRESS,
     title: "Адрес проживания",
+    order: 4,
     path: "/" + RESIDENCE_ADDRESS,
     element: (
       <Page>
@@ -58,6 +62,7 @@ export const navigation = [
   {
     id: SOCIAL_NETWORKS,
     title: "Социальные сети",
+    order: 5,
     path: "/" + SOCIAL_NETWORKS,
     element: (
       <Page>

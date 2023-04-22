@@ -2,9 +2,10 @@
   display: flex;
 
   & .page-content {
+    padding-left: 500px;
     margin-top: 110px;
     margin-bottom: 110px;
-    margin-left: 600px;
+    margin-left: auto;
     margin-right: auto;
     width: 708px;
   }
