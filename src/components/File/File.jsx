@@ -1,3 +1,4 @@
+import { useRef } from 'react';
 import './File.scss';
 import { PREFIX } from '../../constants/servicePrefix';
 import { useCallback } from 'react';
@@ -8,12 +9,13 @@ import cn from 'classnames';
 export const File = ({
   className,
   label = 'Поле для файла', 
-  required = true
+  required = true,
+  onChange,
 }) => {
   const id = uuidv4();
+  const ref = useRef();
   const openUploadWindow = useCallback(() => {
-    const buttonToUpload = document.querySelector('.bf-file .input');
-    buttonToUpload.click();
+    ref.current.click();
   }, []);
 
   return (
@@ -35,12 +37,14 @@ export const File = ({
         </div>
 
         <input 
+          ref={ref}
           className='input' 
           hidden 
           type="file"
           id={id}
           name={id}
           accept="image/png, image/jpeg, application/pdf" 
+          onChange={onChange}
         />
       </div>
     </div>

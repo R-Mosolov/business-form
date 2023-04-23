@@ -18,6 +18,7 @@ export const GeneralQuestions = () => {
     firstName,
     middleName,
     birthPlace,
+    birthDate,
   } = generalQuestions;
 
   const openNextPage = useCallback(() => {
@@ -86,6 +87,13 @@ export const GeneralQuestions = () => {
         <Input
           type="date"
           label="Дата рождения"
+          value={birthDate}
+          onChange={({ target }) => dispatch(
+            setData({ 
+              page: 'generalQuestions', 
+              data: { birthDate: target.value } 
+            })
+          )} 
         />
       </div>
       <Input

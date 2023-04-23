@@ -20,6 +20,7 @@ export const AddressForm = () => {
     streetNumber,
     flatNumber,
     hasFlat,
+    registrationDate,
   } = address;
 
   return (
@@ -115,6 +116,13 @@ export const AddressForm = () => {
           className="registration-date"
           type="date"
           label="Дата прописки"
+          value={registrationDate}
+          onChange={({ target }) => dispatch(
+            setData({ 
+              page: addressId, 
+              data: { registrationDate: target.value } 
+            })
+          )} 
         />
       </div>
     </div>

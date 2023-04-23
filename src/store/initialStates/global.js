@@ -26,12 +26,22 @@ const globalState = {
     registrationDate: '',
     ie: {
       ogrnip: '',
-      hasContract: true
+      hasContract: true,
+      files: {
+        inn: '',
+        ogrnip: '',
+        leaseContract: '',
+        egrip: ''
+      }
     },
     llc: {
       fullName: '',
       shortName: '',
-      ogrn: ''
+      ogrn: '',
+      files: {
+        inn: '',
+        ogrn: ''
+      }
     }
   },
   registrationAddress: globalAddressItems,

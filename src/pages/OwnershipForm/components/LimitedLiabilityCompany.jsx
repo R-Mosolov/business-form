@@ -78,7 +78,27 @@ export const LimitedLiabilityCompany = () => {
           )} 
           onBlur={handleBlur}
         />
-        <File label="Скан ИНН" />
+        <File 
+          label="Скан ИНН" 
+          onChange={(event) => {
+            dispatch(
+              setData({ 
+                page: 'ownershipForm', 
+                data: { 
+                  ...ownershipForm,
+                  llc: {
+                    ...llc,
+                    files: {
+                      ...llc.files,
+                      inn: 'https://some-public-host.ru/' 
+                        + event.target.files[0].name.replaceAll(' ', '_')
+                    }
+                  } 
+                }
+              })
+            );
+          }}
+        />
       </div>
       <div className="universal-row-container">
         <Input 
@@ -94,7 +114,28 @@ export const LimitedLiabilityCompany = () => {
             })
           )} 
         />
-        <File className="ogrn" label="Скан ОГРН" />
+        <File 
+          className="ogrn" 
+          label="Скан ОГРН" 
+          onChange={(event) => {
+            dispatch(
+              setData({ 
+                page: 'ownershipForm', 
+                data: { 
+                  ...ownershipForm,
+                  llc: {
+                    ...llc,
+                    files: {
+                      ...llc.files,
+                      ogrn: 'https://some-public-host.ru/' 
+                        + event.target.files[0].name.replaceAll(' ', '_')
+                    }
+                  } 
+                }
+              })
+            );
+          }}
+        />
       </div>
     </div>
   );
