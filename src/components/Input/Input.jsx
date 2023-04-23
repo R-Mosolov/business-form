@@ -7,8 +7,11 @@ export const Input = ({
   className,
   label,
   type = 'text',
+  value = '',
   placeholder = 'Поле для ввода', 
-  required = true
+  required = true,
+  onChange,
+  onBlur,
 }) => {
   const id = uuidv4();
 
@@ -21,7 +24,14 @@ export const Input = ({
         <span>{label}</span>
         {required && <span>*</span>}
       </label>}
-      <input id={id} type={type} placeholder={placeholder} />
+      <input 
+        id={id} 
+        type={type} 
+        value={value} 
+        placeholder={placeholder} 
+        onChange={onChange}
+        onBlur={onBlur} 
+      />
     </div>
   );
 };
