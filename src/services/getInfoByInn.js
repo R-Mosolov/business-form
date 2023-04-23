@@ -1,6 +1,16 @@
 import { DADATA_ENDPOINT } from '../constants/endpoints';
 import { DADATA_TOKEN } from '../.env.js';
 
+/**
+ * Данная функция запрашивает данные с сервиса DaData:
+ * https://dadata.ru/api/find-party/
+ * Чтобы данные запросились, нужно зарегистрироваться в DaData
+ * и получить там токен, затем создать модуль /src/.env.js
+ * и ввести в нём этот токен как переменную DADATA_TOKEN.
+ * После регистрации в DaData узнать свой токен можно по ссылке:
+ * https://dadata.ru/profile/#info
+ */
+
 export const getInfoByInn = async (inn, setData) => {
   try {
     const response = await fetch(DADATA_ENDPOINT, {
