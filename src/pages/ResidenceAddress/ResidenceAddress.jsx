@@ -33,7 +33,7 @@ export const ResidenceAddress = () => {
       </p>
       {/* TODO: Адрес регистрации и фактического проживания совпадают */}
       <AddressForm />
-      <div className="buttons-container">
+      <div className="universal-row-container">
         <Button secondary onClick={openPreviousPage}>
           Назад
         </Button>

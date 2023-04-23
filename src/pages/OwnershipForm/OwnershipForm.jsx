@@ -5,7 +5,7 @@ import { Select, Button } from "../../components";
 import { OwnershipFormIcon } from "../../assets";
 import { navigation } from '../../data';
 import { GENERAL_QUESTIONS, REGISTRATION_ADDRESS } from '../../constants/pages';
-import { IndividualEntrepreneur } from '.';
+import { LimitedLiabilityCompany } from '.';
 import './OwnershipForm.scss';
 
 export const OwnershipForm = () => {
@@ -41,8 +41,8 @@ export const OwnershipForm = () => {
           { value: 'llc', label: 'Общество с ограниченной ответственностью (ООО)' },
         ]}
       />
-      <IndividualEntrepreneur />
-      <div className="buttons-container">
+      <LimitedLiabilityCompany />
+      <div className="universal-row-container">
         <Button secondary onClick={openPreviousPage}>
           Назад
         </Button>

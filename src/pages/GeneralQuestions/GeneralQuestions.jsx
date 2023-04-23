@@ -54,7 +54,7 @@ export const GeneralQuestions = () => {
         label="Место рождения (как указано в паспорте)" 
         placeholder="Введите наименование региона и населенного пункта" 
       />
-      <div className="buttons-container">
+      <div className="universal-row-container">
         <Button secondary>
           Отмена
         </Button>

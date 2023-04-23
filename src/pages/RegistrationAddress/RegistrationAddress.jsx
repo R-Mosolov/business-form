@@ -32,7 +32,7 @@ export const RegistrationAddress = () => {
         Введите свой действующий адрес прописки.
       </p>
       <AddressForm />
-      <div className="buttons-container">
+      <div className="universal-row-container">
         <Button secondary onClick={openPreviousPage}>
           Назад
         </Button>

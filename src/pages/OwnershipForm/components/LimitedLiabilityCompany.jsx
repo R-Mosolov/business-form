@@ -1,31 +1,34 @@
 import { PREFIX } from "../../../constants/servicePrefix";
-import { Input, Button, File } from "../../../components";
+import { Input, File } from "../../../components";
 
 export const LimitedLiabilityCompany = () => {
   return (
     <div className={PREFIX + 'limited-liability-company'}>
-      <Input 
-        label="Наименование полное" 
-        placeholder="ООО «Московская промышленная компания»" 
-      />
-      <Input 
-        label="Сокращение" 
-        placeholder="ООО «МПК»" 
-      />
-      <Input
-        type="date"
-        label="Дата регистрации"
-      />
-      <Input label="ИНН" placeholder="хххххххххх" />
-      <File label="Скан ИНН" />
-      <Input label="ОГРН" placeholder="ххххххххххххх" />
-      <File label="Скан ОГРН" />
-      <Button>
-        Отмена
-      </Button>
-      <Button>
-        Далее
-      </Button>
+      <div className="universal-row-container">
+        <Input 
+          className="full-name"
+          label="Наименование полное" 
+          placeholder="ООО «Московская промышленная компания»" 
+        />
+        <Input 
+          className="mini-field"
+          label="Сокращение" 
+          placeholder="ООО «МПК»" 
+        />
+      </div>
+      <div className="universal-row-container">
+        <Input
+          className="mini-field"
+          type="date"
+          label="Дата регистрации"
+        />
+        <Input className="mini-field" label="ИНН" placeholder="хххххххххх" />
+        <File label="Скан ИНН" />
+      </div>
+      <div className="universal-row-container">
+        <Input className="mini-field" label="ОГРН" placeholder="ххххххххххххх" />
+        <File className="ogrn" label="Скан ОГРН" />
+      </div>
     </div>
   );
 };
