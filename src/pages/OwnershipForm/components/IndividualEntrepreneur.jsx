@@ -18,12 +18,16 @@ export const IndividualEntrepreneur = () => {
         <Input 
           className="mini-field" 
           label="ИНН" 
-          type="number"
           placeholder="хххххххххх" 
+          type='tel'
           value={inn || ''}
-          onChange={({ target }) => dispatch(
-            setData({ page: 'ownershipForm', data: { inn: target.value } })
-          )} 
+          maxLength={10}
+          pattern="[0-9]{10}"
+          onChange={({ target }) => {
+            dispatch(
+              setData({ page: 'ownershipForm', data: { inn: target.value } })
+            );
+          }} 
         />
         <File
           label="Скан ИНН"
@@ -63,15 +67,19 @@ export const IndividualEntrepreneur = () => {
         <Input 
           className="ogrnip" 
           label="ОГРНИП" 
-          type="number"
+          tel="number"
           placeholder="ххххххххххххххх"
+          maxLength={15}
+          pattern="[0-9]{15}"
           value={ie.ogrnip || ''}
-          onChange={({ target }) => dispatch(
-            setData({ 
-              page: 'ownershipForm', 
-              data: { ie: { ...ie, ogrnip: target.value } } 
-            })
-          )} 
+          onChange={({ target }) => {
+            dispatch(
+              setData({ 
+                page: 'ownershipForm', 
+                data: { ie: { ...ie, ogrnip: target.value } } 
+              })
+            );
+          }}
         />
         <File 
           label="Скан ОГРНИП" 

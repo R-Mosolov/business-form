@@ -10,6 +10,9 @@ export const Input = ({
   value = '',
   placeholder = 'Поле для ввода', 
   required = true,
+  max,
+  maxLength,
+  pattern,
   onChange,
   onBlur,
 }) => {
@@ -29,6 +32,9 @@ export const Input = ({
         type={type} 
         value={value} 
         placeholder={placeholder} 
+        max={max}
+        maxLength={maxLength}
+        pattern={pattern}
         onChange={onChange}
         onBlur={onBlur} 
       />

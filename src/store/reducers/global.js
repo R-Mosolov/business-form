@@ -8,7 +8,6 @@ const slice = createSlice({
   reducers: {
     setData(state = globalState, action) {
       const { page, data, isArray = false } = action.payload;
-      // const isUnique = !state[page].find(({ type }) => type);
 
       if (isArray) {
         state[page] = [
