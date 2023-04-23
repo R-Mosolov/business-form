@@ -5,6 +5,7 @@ import Select from './Select';
 import Button from './Button';
 import Steps from './Steps';
 import File from './File';
+import Checkbox from './Checkbox';
 
 export {
   Page,
@@ -14,4 +15,5 @@ export {
   Button,
   Steps,
   File,
+  Checkbox,
 };

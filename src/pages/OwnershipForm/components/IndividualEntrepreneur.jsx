@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { PREFIX } from "../../../constants/servicePrefix";
-import { File, Input } from "../../../components";
+import { Checkbox, File, Input } from "../../../components";
 import { setData } from '../../../store/reducers/global';
 
 export const IndividualEntrepreneur = () => {
@@ -51,7 +51,7 @@ export const IndividualEntrepreneur = () => {
         <File label="Скан договора аренды помещения (офиса)" />
         <File label="Скан выписки из ЕГРИП (не старше 3 месяцев)" />
       </div>
-      {/* TODO: добавить здесь чек-бокс Нет договора */}
+      <Checkbox className="no-contract" label='Нет договора' />
     </div>
   );
 };

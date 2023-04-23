@@ -1,23 +1,33 @@
+import { useSelector, useDispatch } from 'react-redux';
 import { PREFIX } from "../../../constants/servicePrefix";
 import { Input, File } from "../../../components";
-import { useCallback, useState } from "react";
+import { useCallback } from "react";
 import { getInfoByInn } from "../../../services/getInfoByInn";
+import { setData } from '../../../store/reducers/global';
 
 export const LimitedLiabilityCompany = () => {
-  const [data, setData] = useState({
-    inn: '',
-    fullName: '',
-    shortName: '',
-    registrationDate: '',
-    ogrn: '',
-  });
+  const dispatch = useDispatch();
+  const { ownershipForm } = useSelector(({ global }) => global);
+  const {
+    inn,
+    registrationDate,
+    llc
+  } = ownershipForm;
 
   const handleBlur = useCallback(() => {
     getInfoByInn(
-      data?.inn, 
-      (autofilledData) => setData({ ...data, ...autofilledData })
+      inn, 
+      ({ fullName, shortName, ogrn, registrationDate }) => dispatch(setData({ 
+        ...ownershipForm, 
+        registrationDate,
+        llc: {
+          fullName,
+          shortName,
+          ogrn,
+        } 
+      }))
     );
-  }, [data?.inn]);
+  }, [inn]);
 
   return (
     <div className={PREFIX + 'limited-liability-company'}>
@@ -26,15 +36,25 @@ export const LimitedLiabilityCompany = () => {
           className="full-name"
           label="Наименование полное" 
           placeholder="ООО «Московская промышленная компания»" 
-          value={data?.fullName || ''}
-          onChange={(event) => setData({ ...data, fullName: event?.target?.value || '' })}
+          value={llc?.fullName || ''}
+          onChange={({ target }) => dispatch(
+            setData({ 
+              page: 'ownershipForm', 
+              data: { llc: { ...llc, fullName: target.value } } 
+            })
+          )} 
         />
         <Input 
           className="mini-field"
           label="Сокращение" 
           placeholder="ООО «МПК»" 
-          value={data?.shortName || ''}
-          onChange={(event) => setData({ ...data, shortName: event?.target?.value || '' })}
+          value={llc?.shortName || ''}
+          onChange={({ target }) => dispatch(
+            setData({ 
+              page: 'ownershipForm', 
+              data: { llc: { ...llc, shortName: target.value } } 
+            })
+          )} 
         />
       </div>
       <div className="universal-row-container">
@@ -42,16 +62,20 @@ export const LimitedLiabilityCompany = () => {
           className="mini-field"
           type="date"
           label="Дата регистрации" 
-          value={data?.registrationDate || ''}
-          onChange={(event) => setData({ ...data, registrationDate: event?.target?.value || '' })}
+          value={registrationDate || ''}
+          onChange={({ target }) => dispatch(
+            setData({ page: 'ownershipForm', data: { registrationDate: target.value } })
+          )} 
         />
         <Input 
           className="mini-field" 
           label="ИНН" 
           type="number"
           placeholder="хххххххххх" 
-          value={data?.inn || ''}
-          onChange={(event) => setData({ ...data, inn: event?.target?.value || '' })}
+          value={inn || ''}
+          onChange={({ target }) => dispatch(
+            setData({ page: 'ownershipForm', data: { inn: target.value } })
+          )} 
           onBlur={handleBlur}
         />
         <File label="Скан ИНН" />
@@ -62,8 +86,13 @@ export const LimitedLiabilityCompany = () => {
           label="ОГРН" 
           type="number"
           placeholder="ххххххххххххх" 
-          value={data?.ogrn || ''}
-          onChange={(event) => setData({ ...data, ogrn: event?.target?.value || '' })}
+          value={llc?.ogrn || ''}
+          onChange={({ target }) => dispatch(
+            setData({ 
+              page: 'ownershipForm', 
+              data: { llc: { ...llc, ogrn: target.value } } 
+            })
+          )} 
         />
         <File className="ogrn" label="Скан ОГРН" />
       </div>

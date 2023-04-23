@@ -1,10 +1,18 @@
 .bf-address-form {
+  .sync {
+    margin-bottom: 40px;
+  }
+
   .small-columns {
     display: flex;
     column-gap: 16px;
 
     & .bf-input {
       width: 72px;
+    }
+
+    & .no-flat {
+      margin-top: -8px;
     }
   }
 

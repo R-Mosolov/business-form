@@ -41,7 +41,9 @@ export const SocialNetworks = () => {
           { value: 'sk', label: 'Skype' },
         ]}
       />
-      {/* TODO: Добавить социальную сеть */}
+      <Button className="add-social-link" isSocialLinksButton>
+        Добавить социальную сеть
+      </Button>
       <div className="universal-row-container">
         <Button secondary onClick={openPreviousPage}>
           Назад

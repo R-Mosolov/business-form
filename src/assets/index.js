@@ -5,6 +5,7 @@ import AddressIcon from './images/address.svg';
 import SocialNetworksIcon from './images/socialNetworks.svg';
 import CheckboxIcon from './images/checkbox.svg';
 import UploadIcon from './images/upload.svg';
+import PlusIcon from './images/plus.svg';
 
 export {
   GeneralQuestionsIcon,
@@ -14,4 +15,5 @@ export {
   SocialNetworksIcon,
   CheckboxIcon,
   UploadIcon,
+  PlusIcon
 };

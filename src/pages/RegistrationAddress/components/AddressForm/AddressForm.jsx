@@ -1,5 +1,5 @@
 import './AddressForm.scss';
-import { Select, Input } from "../../../../components";
+import { Select, Input, Checkbox } from "../../../../components";
 import { PREFIX } from '../../../../constants/servicePrefix';
 import { useSelector, useDispatch } from 'react-redux';
 import { setData } from '../../../../store/reducers/global';
@@ -22,6 +22,10 @@ export const AddressForm = () => {
 
   return (
     <div className={PREFIX + 'address-form'}>
+      <Checkbox
+        className="sync" 
+        label='Адрес регистрации и фактического проживания совпадают' 
+      />
       <div className='big-columns-container'>
         <Select 
           label="Страна"
@@ -87,8 +91,8 @@ export const AddressForm = () => {
               })
             )}
           />
+          <Checkbox className="no-flat" label='Нет квартиры' />
         </div>
-        {/* TODO: добавить здесь чек-бокс Нет квартиры */}
         <Input
           className="registration-date"
           type="date"

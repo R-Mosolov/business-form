@@ -1,5 +1,9 @@
 .bf-social-networks {
-  .site-or-app {
+  & .site-or-app {
     width: 229px;
+  }
+
+  & .add-social-link {
+    margin-bottom: 64px;
   }
 }

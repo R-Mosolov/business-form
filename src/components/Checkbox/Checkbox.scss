@@ -1,0 +1,22 @@
+.bf-checkbox {
+  display: flex;
+  align-items: center;
+
+  & input {
+    cursor: pointer;
+    width: 18px;
+    height: 18px;
+    border: 1px solid #E4E5E7;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  & label {
+    cursor: pointer;
+    margin-left: 8px;
+    font-size: 14px;
+    line-height: 17px;
+    color: #999999;
+    opacity: 0.87;
+  }
+}
