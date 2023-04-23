@@ -1,0 +1,12 @@
+.bf-social-link {
+  display: flex;
+  align-items: flex-end;
+
+  & .select {
+    width: 229px;
+  }
+
+  & .input {
+    width: 479px;
+  }
+}

@@ -5,7 +5,7 @@ import cn from 'classnames';
 
 export const Select = ({
   className,
-  label = 'Поле для выбора',
+  label,
   data = [{ value: 'example', label: 'Выберите вариант' }],
   required = true,
   onChange,

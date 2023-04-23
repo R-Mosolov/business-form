@@ -1,0 +1,42 @@
+[
+  {
+    "value": "select",
+    "label": "Выбрать"
+  },
+  {
+    "value": "vk",
+    "label": "ВКонтакте"
+  },
+  {
+    "value": "insta",
+    "label": "Instagram"
+  },
+  {
+    "value": "wa",
+    "label": "WhatsApp"
+  },
+  {
+    "value": "yt",
+    "label": "YouTube"
+  },
+  {
+    "value": "ok",
+    "label": "Одноклассники"
+  },
+  {
+    "value": "fb",
+    "label": "Facebook"
+  },
+  {
+    "value": "vb",
+    "label": "Viber"
+  },
+  {
+    "value": "vim",
+    "label": "Vimeo"
+  },
+  {
+    "value": "sk",
+    "label": "Skype"
+  }
+]

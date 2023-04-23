@@ -6,6 +6,7 @@ import Button from './Button';
 import Steps from './Steps';
 import File from './File';
 import Checkbox from './Checkbox';
+import SocialLink from './SocialLink';
 
 export {
   Page,
@@ -16,4 +17,5 @@ export {
   Steps,
   File,
   Checkbox,
+  SocialLink
 };
