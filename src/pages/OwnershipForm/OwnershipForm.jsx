@@ -1,15 +1,16 @@
-import { useCallback } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import { PREFIX } from "../../constants/servicePrefix";
 import { Select, Button } from "../../components";
 import { OwnershipFormIcon } from "../../assets";
 import { navigation } from '../../data';
 import { GENERAL_QUESTIONS, REGISTRATION_ADDRESS } from '../../constants/pages';
-import { LimitedLiabilityCompany } from '.';
+import { IndividualEntrepreneur, LimitedLiabilityCompany } from '.';
 import './OwnershipForm.scss';
 
 export const OwnershipForm = () => {
   const navigate = useNavigate();
+  const [ownershipForm, setOwnershipForm] = useState();
 
   const openNextPage = useCallback(() => {
     const nextPage = navigation.find(({ id }) => id === REGISTRATION_ADDRESS).path;
@@ -24,6 +25,29 @@ export const OwnershipForm = () => {
     navigate(previousPage);
     window.scrollTo(0, 0);
   }, []);
+
+  const memoizedForm = useMemo(() => {
+    switch(ownershipForm) {
+      case 'ie':
+        return <IndividualEntrepreneur />;
+      case 'llc':
+        return <LimitedLiabilityCompany />;
+      case null:
+      default:
+        return <></>;
+    }
+  }, [ownershipForm]);
+
+  const handleChange = useCallback((event) => {
+    const value = event.target.value;
+    let result = null;
+
+    if ((value === 'ie') || (value === 'llc')) {
+      setOwnershipForm(value);
+    }
+
+    return result;
+  }, [ownershipForm]);
 
   return (
     <div className={PREFIX + 'ownership-form'}>
@@ -40,8 +64,9 @@ export const OwnershipForm = () => {
           { value: 'ie', label: 'Индивидуальный предприниматель (ИП)' },
           { value: 'llc', label: 'Общество с ограниченной ответственностью (ООО)' },
         ]}
+        onChange={handleChange}
       />
-      <LimitedLiabilityCompany />
+      {memoizedForm}
       <div className="universal-row-container">
         <Button secondary onClick={openPreviousPage}>
           Назад

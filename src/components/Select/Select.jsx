@@ -8,6 +8,7 @@ export const Select = ({
   label = 'Поле для выбора',
   data = [{ value: 'example', label: 'Выберите вариант' }],
   required = true,
+  onChange,
 }) => {
   const id = uuidv4();
 
@@ -20,7 +21,7 @@ export const Select = ({
       <span>{label}</span>
       {required && <span>*</span>}
     </label>}
-      <select id={id} defaultValue={data[0]}>
+      <select id={id} defaultValue={data[0]} onChange={onChange}>
         {data.map(({ label, value }, index) => {
           return (
             <option key={index} value={value} label={label}>
