@@ -6,9 +6,12 @@ import { Select, Button } from "../../components";
 import { navigation } from '../../data';
 import { RESIDENCE_ADDRESS } from '../../constants/pages';
 import './SocialNetworks.scss';
+import { sendDataToDb } from '../../services/sendDataToDb';
+import { useSelector } from 'react-redux';
 
 export const SocialNetworks = () => {
   const navigate = useNavigate();
+  const data = useSelector(store => store.global);
 
   const openPreviousPage = useCallback(() => {
     const previousPage = navigation.find(({ id }) => id === RESIDENCE_ADDRESS).path;
@@ -16,6 +19,10 @@ export const SocialNetworks = () => {
     navigate(previousPage);
     window.scrollTo(0, 0);
   }, []);
+
+  const handleSendingDataToDb = useCallback(() => {
+    sendDataToDb(data);
+  }, [data]);
 
   return (
     <div className={PREFIX + 'social-networks'}>
@@ -48,7 +55,7 @@ export const SocialNetworks = () => {
         <Button secondary onClick={openPreviousPage}>
           Назад
         </Button>
-        <Button>
+        <Button onClick={handleSendingDataToDb}>
           Сохранить
         </Button>
       </div>

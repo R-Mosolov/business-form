@@ -3,8 +3,9 @@ import { Select, Input, Checkbox } from "../../../../components";
 import { PREFIX } from '../../../../constants/servicePrefix';
 import { useSelector, useDispatch } from 'react-redux';
 import { setData } from '../../../../store/reducers/global';
-import { navigation } from '../../../../data';
+import { countries, navigation, regions } from '../../../../data';
 import { REGISTRATION_ADDRESS } from '../../../../constants/pages';
+import { getSelectLabel } from '../../../../utils';
 
 export const AddressForm = () => {
   const dispatch = useDispatch();
@@ -18,27 +19,35 @@ export const AddressForm = () => {
     streetName,
     streetNumber,
     flatNumber,
+    hasFlat,
   } = address;
 
   return (
     <div className={PREFIX + 'address-form'}>
-      <Checkbox
+      {!isRegistationAddress && <Checkbox
         className="sync" 
         label='Адрес регистрации и фактического проживания совпадают' 
-      />
+      />}
       <div className='big-columns-container'>
         <Select 
           label="Страна"
-          data={[
-            { value: 'ru', label: 'Россия' },
-            { value: 'fr', label: 'Франция' },
-          ]}
+          data={countries}
+          onChange={({ target }) => dispatch(
+            setData({ 
+              page: addressId, 
+              data: { country: getSelectLabel(countries, target.value) } 
+            })
+          )} 
         />
         <Select 
           label="Регион"
-          data={[
-            { value: 'select', label: 'Выберите регион' },
-          ]}
+          data={regions}
+          onChange={({ target }) => dispatch(
+            setData({ 
+              page: addressId, 
+              data: { region: getSelectLabel(regions, target.value) } 
+            })
+          )} 
         />
       </div>
       <div className='big-columns-container'>
@@ -91,7 +100,16 @@ export const AddressForm = () => {
               })
             )}
           />
-          <Checkbox className="no-flat" label='Нет квартиры' />
+          <Checkbox 
+            className="no-flat" 
+            label='Нет квартиры' 
+            onChange={() => dispatch(
+              setData({ 
+                page: addressId,
+                data: { hasFlat: !hasFlat } 
+              })
+            )}
+          />
         </div>
         <Input
           className="registration-date"

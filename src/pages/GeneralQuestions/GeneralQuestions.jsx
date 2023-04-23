@@ -4,9 +4,10 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Button, Input, Select } from "../../components";
 import { PREFIX } from "../../constants/servicePrefix";
 import { GeneralQuestionsIcon } from "../../assets";
-import { navigation } from '../../data';
+import { cities, countries, navigation } from '../../data';
 import { OWNERSHIP_FORM } from '../../constants/pages';
 import { setData } from '../../store/reducers/global';
+import { getSelectLabel } from '../../utils';
 
 export const GeneralQuestions = () => {
   const navigate = useNavigate();
@@ -62,19 +63,25 @@ export const GeneralQuestions = () => {
         />
         <Select 
           label="Основной город"
-          data={[
-            { value: 'spb', label: 'Санкт-Петербург' },
-            { value: 'msc', label: 'Москва' },
-          ]}
+          data={cities}
+          onChange={({ target }) => dispatch(
+            setData({ 
+              page: 'generalQuestions', 
+              data: { city: getSelectLabel(cities, target.value) } 
+            })
+          )}
         />
       </div>
       <div className='big-columns-container'>
         <Select 
           label="Гражданство"
-          data={[
-            { value: 'ru', label: 'Россия' },
-            { value: 'fr', label: 'Франция' },
-          ]}
+          data={countries}
+          onChange={({ target }) => dispatch(
+            setData({ 
+              page: 'generalQuestions', 
+              data: { nationality: getSelectLabel(countries, target.value) } 
+            })
+          )} 
         />
         <Input
           type="date"

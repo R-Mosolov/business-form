@@ -51,7 +51,18 @@ export const IndividualEntrepreneur = () => {
         <File label="Скан договора аренды помещения (офиса)" />
         <File label="Скан выписки из ЕГРИП (не старше 3 месяцев)" />
       </div>
-      <Checkbox className="no-contract" label='Нет договора' />
+      <Checkbox 
+        className="no-contract" 
+        label='Нет договора' 
+        onChange={() => {
+          dispatch(
+            setData({ 
+              page: 'ownershipForm', 
+              data: { ...ownershipForm, ie: { hasContract: !ie.hasContract } } 
+            })
+          );
+        }}
+      />
     </div>
   );
 };

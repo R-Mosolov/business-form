@@ -1,6 +1,6 @@
 const globalAddressItems = {
-  country: '',
-  region: '',
+  country: 'Россия',
+  region: 'Ленинградская область',
   cityOrProvince: '',
   streetName: '',
   streetNumber: '',
@@ -14,8 +14,8 @@ const globalState = {
     lastName: '',
     firstName: '',
     middleName: '',
-    city: 'spb',
-    nationality: 'russian',
+    city: 'Санкт-Петербург',
+    nationality: 'Россия',
     gender: 'male',
     birthDate: '',
     birthPlace: ''

@@ -1,15 +1,19 @@
 import { useCallback, useMemo, useState } from 'react';
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from 'react-redux';
 import { PREFIX } from "../../constants/servicePrefix";
 import { Select, Button } from "../../components";
 import { OwnershipFormIcon } from "../../assets";
-import { navigation } from '../../data';
+import { activities, navigation } from '../../data';
 import { GENERAL_QUESTIONS, REGISTRATION_ADDRESS } from '../../constants/pages';
 import { IndividualEntrepreneur, LimitedLiabilityCompany } from '.';
 import './OwnershipForm.scss';
+import { setData } from '../../store/reducers/global';
+import { getSelectLabel } from '../../utils';
 
 export const OwnershipForm = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const [ownershipForm, setOwnershipForm] = useState();
 
   const openNextPage = useCallback(() => {
@@ -44,6 +48,12 @@ export const OwnershipForm = () => {
 
     if ((value === 'ie') || (value === 'llc')) {
       setOwnershipForm(value);
+      dispatch(
+        setData({ 
+          page: 'ownershipForm', 
+          data: { activityType: getSelectLabel(activities, value) } 
+        })
+      );
     }
 
     return result;
@@ -59,11 +69,7 @@ export const OwnershipForm = () => {
       <Select 
         className="activity-type"
         label="Вид деятельности"
-        data={[
-          { value: 'select', label: 'Выбрать' },
-          { value: 'ie', label: 'Индивидуальный предприниматель (ИП)' },
-          { value: 'llc', label: 'Общество с ограниченной ответственностью (ООО)' },
-        ]}
+        data={activities}
         onChange={handleChange}
       />
       {memoizedForm}
