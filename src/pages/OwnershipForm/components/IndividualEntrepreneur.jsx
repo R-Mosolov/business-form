@@ -1,7 +1,16 @@
+import { useSelector, useDispatch } from 'react-redux';
 import { PREFIX } from "../../../constants/servicePrefix";
 import { File, Input } from "../../../components";
+import { setData } from '../../../store/reducers/global';
 
 export const IndividualEntrepreneur = () => {
+  const dispatch = useDispatch();
+  const { ownershipForm } = useSelector(({ global }) => global);
+  const {
+    inn,
+    ie
+  } = ownershipForm;
+
   return (
     <div className={PREFIX + 'individual-entrepreneur'}>
       <div className="universal-row-container">
@@ -10,6 +19,10 @@ export const IndividualEntrepreneur = () => {
           label="ИНН" 
           type="number"
           placeholder="хххххххххх" 
+          value={inn || ''}
+          onChange={({ target }) => dispatch(
+            setData({ page: 'ownershipForm', data: { inn: target.value } })
+          )} 
         />
         <File label="Скан ИНН" />
         <Input
@@ -23,7 +36,14 @@ export const IndividualEntrepreneur = () => {
           className="ogrnip" 
           label="ОГРНИП" 
           type="number"
-          placeholder="ххххххххххххххх" 
+          placeholder="ххххххххххххххх"
+          value={ie.ogrnip || ''}
+          onChange={({ target }) => dispatch(
+            setData({ 
+              page: 'ownershipForm', 
+              data: { ie: { ...ie, ogrnip: target.value } } 
+            })
+          )} 
         />
         <File label="Скан ОГРНИП" />
       </div>

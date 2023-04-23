@@ -38,7 +38,8 @@ const globalState = {
   residenceAddress: {
     ...globalAddressItems,
     areAddressesEquivalent: false
-  }
+  },
+  socialNetworks: []
 };
 
 export default globalState;
