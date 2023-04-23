@@ -48,6 +48,7 @@ export const LimitedLiabilityCompany = () => {
         <Input 
           className="mini-field" 
           label="ИНН" 
+          type="number"
           placeholder="хххххххххх" 
           value={data?.inn || ''}
           onChange={(event) => setData({ ...data, inn: event?.target?.value || '' })}
@@ -59,6 +60,7 @@ export const LimitedLiabilityCompany = () => {
         <Input 
           className="mini-field" 
           label="ОГРН" 
+          type="number"
           placeholder="ххххххххххххх" 
           value={data?.ogrn || ''}
           onChange={(event) => setData({ ...data, ogrn: event?.target?.value || '' })}

@@ -5,7 +5,12 @@ export const IndividualEntrepreneur = () => {
   return (
     <div className={PREFIX + 'individual-entrepreneur'}>
       <div className="universal-row-container">
-        <Input className="mini-field" label="ИНН" placeholder="хххххххххх" />
+        <Input 
+          className="mini-field" 
+          label="ИНН" 
+          type="number"
+          placeholder="хххххххххх" 
+        />
         <File label="Скан ИНН" />
         <Input
           className="mini-field"
@@ -14,7 +19,12 @@ export const IndividualEntrepreneur = () => {
         />
       </div>
       <div className="universal-row-container">
-        <Input className="ogrnip" label="ОГРНИП" placeholder="ххххххххххххххх" />
+        <Input 
+          className="ogrnip" 
+          label="ОГРНИП" 
+          type="number"
+          placeholder="ххххххххххххххх" 
+        />
         <File label="Скан ОГРНИП" />
       </div>
       <div className="universal-row-container scans-container">
